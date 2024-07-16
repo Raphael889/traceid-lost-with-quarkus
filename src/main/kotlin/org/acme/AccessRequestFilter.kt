@@ -15,7 +15,6 @@ class AccessRequestFilter {
     @RouteFilter(100)
     fun filter(routingContext: RoutingContext) {
         val startTime = System.currentTimeMillis()
-        val spanContext = Span.current().spanContext.isSampled
         log.info("AccessRequestFilter.filter start")
 
         routingContext.addEndHandler { _ ->
